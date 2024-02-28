@@ -5,33 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="src/styles/styles.css">
   
   <title>Frontend Mentor | Results summary component</title>
 
 </head>
 <body>
+    <div class="score-container">
+        <h1 class="score-result">
+            Your Result
+        </h1>
 
-  Your Result
-  76
-  of 100
+        <div class="score-circle">
+            <h2 class="score-major">
+                76
+            </h2>
+            <span class="score-minor">
+                of 100
+            </span>
+        </div>
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+        <h3 class="score-title">
+            Great
+        </h3>
 
-  Reaction
-  80 / 100
+        <p>
+            You scored higher than 65% of the people who have taken these tests.
+        </p>
+    </div>
 
-  Memory
-  92 / 100
+    <div class="summary-container">
+        <h4>
+            Summary
+        </h4>
 
-  Verbal
-  61 / 100
+        <div class="react-score">
+            Reaction
+            80 / 100
+        </div>
 
-  Visual
-  72 / 100
+        <div class="memo-score">
+            Memory
+            92 / 100
+        </div>
 
-  Continue
+        <div class="verb-score">
+            Verbal
+            61 / 100
+        </div>
+
+        <div class="visual-score">
+            Visual
+            72 / 100
+        </div>
+
+        <button class="btn-continue">
+            Continue
+        </button>
+    </div>
 </body>
 </html>
