@@ -1,1 +1,63 @@
-@import url(reset.css);/*# sourceMappingURL=styles.css.map */
+@import url(reset.css);
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+body {
+  min-height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+}
+body .score-container {
+  padding: 2rem 3rem;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(0deg, hsl(241, 81%, 54%) 20%, hsl(252, 100%, 67%) 100%);
+  border-radius: 0 0 30px 30px;
+  color: white;
+}
+body .score-container .score-result {
+  margin-bottom: 2rem;
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(241, 100%, 89%);
+}
+body .score-container .score-circle {
+  margin-bottom: 1.5rem;
+  min-height: 9rem;
+  min-width: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%, hsl(256, 72%, 46%) 70%);
+  border-radius: 50%;
+}
+body .score-container .score-circle .score-major {
+  font-size: 56px;
+  font-weight: 800;
+  color: white;
+}
+body .score-container .score-circle .score-minor {
+  color: hsl(241, 100%, 89%);
+  opacity: 0.8;
+  position: relative;
+  top: 0.6rem;
+}
+body .score-container .score-title {
+  margin-bottom: 0.7rem;
+  font-size: 24px;
+  font-weight: 700;
+}
+body .score-container p {
+  text-align: center;
+  color: hsl(241, 100%, 89%);
+}/*# sourceMappingURL=styles.css.map */

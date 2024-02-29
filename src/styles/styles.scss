@@ -1,1 +1,82 @@
+// Imports
 @import url(reset.css);
+
+// Variables
+$font-path: "../assets/fonts";
+$font: "Hanken Grotesk", sans-serif;
+$light-red: hsl(0, 100%, 67%);
+$orange-ylw: hsl(39, 100%, 56%);
+$green-teal: hsl(166, 100%, 37%);
+$cobalt-blue: hsl(234, 85%, 45%);
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lav: hsl(241, 100%, 89%);
+$dark-grbl: hsl(224, 30%, 27%);
+
+$gradient-card: linear-gradient(0deg, hsl(241, 81%, 54%) 20%, hsl(252, 100%, 67%) 100%);
+$gradient-circle: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%, hsla(256, 72%, 46%, 1) 70%);
+
+// Font Path
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url("#{$font-path}/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+    min-height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $font;
+    font-weight: 500;
+    .score-container {
+        padding: 2rem 3rem;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: $gradient-card;
+        border-radius: 0 0 30px 30px;
+        color: white;
+        .score-result {
+            margin-bottom: 2rem;
+            font-size: 18px;
+            font-weight: 700;
+            color: $light-lav;
+        }
+        .score-circle {
+            margin-bottom: 1.5rem;
+            min-height: 9rem;
+            min-width: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: $gradient-circle;
+            border-radius: 50%;
+            .score-major {
+                font-size: 56px;
+                font-weight: 800;
+                color: white;
+            }
+            .score-minor {
+                color: $light-lav;
+                opacity: 0.8;
+                position: relative;
+                top: 0.6rem;
+            }
+        }
+        .score-title {
+            margin-bottom: 0.7rem;
+            font-size: 24px;
+            font-weight: 700;
+        }   
+        p {
+            text-align: center;
+            color: $light-lav;
+        }
+    }
+}
