@@ -1,63 +1,175 @@
-@import url(reset.css);
 @font-face {
   font-family: "Hanken Grotesk";
   src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
 }
-body {
-  min-height: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Hanken Grotesk", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken Grotesk", sans-serif, sans-serif;
+  font-size: 1.1rem;
   font-weight: 500;
 }
-body .score-container {
-  padding: 2rem 3rem;
-  min-height: 100%;
+
+.score-container {
+  padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   background: linear-gradient(0deg, hsl(241, 81%, 54%) 20%, hsl(252, 100%, 67%) 100%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
   border-radius: 0 0 30px 30px;
-  color: white;
 }
-body .score-container .score-result {
-  margin-bottom: 2rem;
-  font-size: 18px;
-  font-weight: 700;
+.score-container .score-result {
   color: hsl(241, 100%, 89%);
 }
-body .score-container .score-circle {
-  margin-bottom: 1.5rem;
-  min-height: 9rem;
-  min-width: 9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  background: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%, hsl(256, 72%, 46%) 70%);
+.score-container .score-circle {
+  width: 5.5rem;
+  padding: 1.5rem;
+  margin: 1em;
   border-radius: 50%;
+  background: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%, hsl(256, 72%, 46%) 70%);
 }
-body .score-container .score-circle .score-major {
-  font-size: 56px;
+.score-container .score-circle .score-major {
+  font-size: 3rem;
   font-weight: 800;
-  color: white;
 }
-body .score-container .score-circle .score-minor {
+.score-container .score-circle .score-minor {
+  font-size: 0.9rem;
   color: hsl(241, 100%, 89%);
   opacity: 0.8;
-  position: relative;
-  top: 0.6rem;
 }
-body .score-container .score-title {
-  margin-bottom: 0.7rem;
-  font-size: 24px;
+.score-container .score-title {
+  font-size: 1.5rem;
   font-weight: 700;
 }
-body .score-container p {
-  text-align: center;
+.score-container p {
+  padding-top: 0.7rem;
+  font-size: 1rem;
   color: hsl(241, 100%, 89%);
+  font-weight: 400;
+}
+
+.summary-container {
+  padding: 1rem 2rem;
+}
+.summary-container h4 {
+  padding-bottom: 0.5rem;
+}
+.summary-container .react-score,
+.summary-container .memo-score,
+.summary-container .verb-score,
+.summary-container .visual-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 2;
+  padding: 0.9rem;
+  margin: 0.9rem 0;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+.summary-container .react-score h5,
+.summary-container .memo-score h5,
+.summary-container .verb-score h5,
+.summary-container .visual-score h5 {
+  margin-right: auto;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+.summary-container .react-score p, .summary-container .react-score span,
+.summary-container .memo-score p,
+.summary-container .memo-score span,
+.summary-container .verb-score p,
+.summary-container .verb-score span,
+.summary-container .visual-score p,
+.summary-container .visual-score span {
+  font-size: 0.9rem;
+}
+.summary-container .react-score p,
+.summary-container .memo-score p,
+.summary-container .verb-score p,
+.summary-container .visual-score p {
+  font-weight: 700;
+  color: hsl(224, 30%, 27%);
+}
+.summary-container .react-score span,
+.summary-container .memo-score span,
+.summary-container .verb-score span,
+.summary-container .visual-score span {
+  font-weight: 700;
+  color: hsla(224, 30%, 27%, 0.5);
+}
+.summary-container .react-score {
+  background-color: hsla(0, 100%, 67%, 0.05);
+}
+.summary-container .react-score h5 {
+  color: hsl(0, 100%, 67%);
+}
+.summary-container .memo-score {
+  background-color: hsla(39, 100%, 56%, 0.05);
+}
+.summary-container .memo-score h5 {
+  color: hsl(39, 100%, 56%);
+}
+.summary-container .verb-score {
+  background-color: hsla(166, 100%, 37%, 0.05);
+}
+.summary-container .verb-score h5 {
+  color: hsl(166, 100%, 37%);
+}
+.summary-container .visual-score {
+  background-color: hsla(234, 85%, 45%, 0.05);
+}
+.summary-container .visual-score h5 {
+  color: hsl(234, 85%, 45%);
+}
+.summary-container .btn-continue {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: hsl(224, 30%, 27%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  body .main-container {
+    max-width: 650px;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+    box-shadow: 1px 1px 30px hsla(234, 85%, 45%, 0.1);
+  }
+  body .score-container {
+    width: 50%;
+    justify-content: space-around;
+    border-radius: 30px;
+  }
+  body .score-container .score-circle {
+    width: 6rem;
+    height: 6rem;
+  }
+  body .score-container .score-circle .score-major {
+    font-size: 3.5rem;
+  }
+  body .score-container p {
+    font-size: 0.9rem;
+  }
+  body .summary-container {
+    width: 50%;
+    padding: 2rem;
+  }
+  body .summary-container .btn-continue:hover {
+    background: linear-gradient(0deg, hsl(241, 81%, 54%) 20%, hsl(252, 100%, 67%) 100%);
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -1,17 +1,18 @@
-// Imports
-@import url(reset.css);
-
 // Variables
 $font-path: "../assets/fonts";
 $font: "Hanken Grotesk", sans-serif;
-$light-red: hsl(0, 100%, 67%);
+$light-red: hsla(0, 100%, 67%, 1);
+$light-red-bg: hsla(0, 100%, 67%, .05);
 $orange-ylw: hsl(39, 100%, 56%);
+$orange-ylw-bg: hsla(39, 100%, 56%, .05);
 $green-teal: hsl(166, 100%, 37%);
+$green-teal-bg: hsl(166, 100%, 37%, .05);
 $cobalt-blue: hsl(234, 85%, 45%);
+$cobalt-blue-bg: hsl(234, 85%, 45%, .05);
 $white: hsl(0, 0%, 100%);
 $pale-blue: hsl(221, 100%, 96%);
 $light-lav: hsl(241, 100%, 89%);
-$dark-grbl: hsl(224, 30%, 27%);
+$dark-grbl: hsla(224, 30%, 27%);
 
 $gradient-card: linear-gradient(0deg, hsl(241, 81%, 54%) 20%, hsl(252, 100%, 67%) 100%);
 $gradient-circle: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%, hsla(256, 72%, 46%, 1) 70%);
@@ -22,61 +23,159 @@ $gradient-circle: linear-gradient(0deg, hsla(241, 72%, 46%, 0) 0%, hsla(256, 72%
     src: url("#{$font-path}/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
 }
 
-body {
-    min-height: 100vw;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.score-container {
+    padding: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: $font;
-    font-weight: 500;
-    .score-container {
-        padding: 2rem 3rem;
-        min-height: 100%;
+    background: $gradient-card;
+    color: $white;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    .score-result {
+        color: $light-lav;
+    }
+    .score-circle {
+        width: 5.5rem;
+        padding: 1.5rem;
+        margin: 1em;
+        border-radius: 50%;
+        background: $gradient-circle;
+        .score-major {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        .score-minor {
+            font-size: .9rem;
+            color: $light-lav;
+            opacity: .8;
+        }
+    }
+    .score-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    p {
+        padding-top: .7rem;
+        font-size: 1rem;
+        color: $light-lav;
+        font-weight: 400;
+    }
+}
+
+.summary-container {
+    padding: 1rem 2rem;
+    h4 {
+        padding-bottom: .5rem;
+    }
+    .react-score,
+    .memo-score,
+    .verb-score,
+    .visual-score {
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background: $gradient-card;
-        border-radius: 0 0 30px 30px;
-        color: white;
-        .score-result {
-            margin-bottom: 2rem;
-            font-size: 18px;
-            font-weight: 700;
-            color: $light-lav;
+        justify-content: space-between;
+        flex-grow: 2;
+        padding: .9rem;
+        margin: .9rem 0;
+        font-size: 1rem;
+        border-radius: .5rem;
+        h5 {
+            margin-right: auto;
+            padding-left: 1rem;
+            font-size: .9rem;
         }
-        .score-circle {
-            margin-bottom: 1.5rem;
-            min-height: 9rem;
-            min-width: 9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            background: $gradient-circle;
-            border-radius: 50%;
-            .score-major {
-                font-size: 56px;
-                font-weight: 800;
-                color: white;
-            }
-            .score-minor {
-                color: $light-lav;
-                opacity: 0.8;
-                position: relative;
-                top: 0.6rem;
-            }
+        p, span {
+            font-size: .9rem
         }
-        .score-title {
-            margin-bottom: 0.7rem;
-            font-size: 24px;
-            font-weight: 700;
-        }   
         p {
-            text-align: center;
-            color: $light-lav;
+            font-weight: 700;
+            color: $dark-grbl;
+        }
+        span {
+            font-weight: 700;
+            color: hsla(224, 30%, 27%, .5);
+        }
+    }
+    .react-score {
+        background-color: $light-red-bg;
+        h5 {
+            color: $light-red;
+        }
+    }
+    .memo-score {
+        background-color: $orange-ylw-bg;
+        h5 {
+            color: $orange-ylw;
+        }
+    }
+    .verb-score {
+        background-color: $green-teal-bg;
+        h5 {
+            color: $green-teal;
+        }
+    }
+    .visual-score {
+        background-color: $cobalt-blue-bg;
+        h5 {
+            color: $cobalt-blue;
+        }
+    }
+    .btn-continue {
+        width: 100%;
+        margin-top: 1rem;
+        padding: .7rem;
+        background: $dark-grbl;
+        color: $white;
+        border: none;
+        border-radius: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .main-container {
+            max-width: 650px;
+            margin: 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 30px;
+            box-shadow: 1px 1px 30px hsla(234, 85%, 45%, 0.1);
+        }
+        .score-container {
+            width: 50%;
+            justify-content: space-around;
+            border-radius: 30px;
+            .score-circle {
+                width: 6rem;
+                height: 6rem;
+                .score-major {
+                    font-size: 3.5rem;
+                }
+            }
+            p {
+                font-size: .9rem;
+            }
+        }
+        .summary-container {
+            width: 50%;
+            padding: 2rem;
+            .btn-continue:hover {
+                background: $gradient-card;
+            }
         }
     }
 }
